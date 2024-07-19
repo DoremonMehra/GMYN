@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Like Me?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #95d7e2;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #yesButton {
+            background: linear-gradient(45deg, #1de9b6, #1dc4e9);
+            color: white;
+        }
+
+        #noButton {
+            background: linear-gradient(45deg, #ff4b5c, #ff8164);
+            color: white;
+            position: absolute;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .center-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 50px;
+            font-family: sans-serif;
+            color: brown;
+        }
+         
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>* TU GAAND MARWATA HA NA ???</h1>
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+    </div>
+
+    <script>
+        document.getElementById('yesButton').addEventListener('click', function () {
+            window.location.href = 'yes.html';
+        });
+
+        document.getElementById('noButton').addEventListener('mouseover', function (event) {
+            let button = event.target;
+            let x = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+            let y = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        });
+    </script>
+
+</body>
+
+</html>
